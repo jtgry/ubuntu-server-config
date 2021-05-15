@@ -1,0 +1,19 @@
+# Server
+sudo ufw allow ssh
+
+# Samba
+sudo ufw allow 445
+sudo ufw allow 139
+
+# pihole
+sudo ufw allow 80/tcp
+sudo ufw allow 53/tcp
+sudo ufw allow 53/udp
+sudo ufw allow 67/tcp
+sudo ufw allow 67/udp
+
+# Wireguard
+sudo ufw allow 51820/tcp
+sudo ufw allow 51820/udp
+sudo ufw route allow in on wg0 out on eth0
+sudo ufw route allow in on eth0 out on wg0
